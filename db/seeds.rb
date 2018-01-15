@@ -11,3 +11,11 @@ Restaurant.all.each do |restaurant|
     puts "Create menu with name: #{c.name}"
   end
 end
+
+seed_file = Rails.root.join('db', 'seeds', 'dish_categories.yml')
+config = YAML::load_file(seed_file)
+Menu.all.each do |menu|
+  menu.dish_categories.create!(config) do |c|
+    puts "Create dish category with name: #{c.name}"
+  end
+end
