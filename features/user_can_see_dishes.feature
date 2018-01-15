@@ -1,7 +1,7 @@
-Feature: Dish categories displayed for visitors
+Feature: Dishes displayed for visitors
   As a visitor
   In order to help me decide what food to order
-  I would like to see dish categories displayed
+  I would like to see dishes displayed
 
   Background:
     Given the following restaurants exists
@@ -16,9 +16,15 @@ Feature: Dish categories displayed for visitors
       | name    |
       | Pizza   |
       | Noodles |
+    And the following dishes exist for "Pizza"
+      | name       | price  |
+      | Margherita | 15     |
+      | Hawaii     | 14     |
 
   Scenario: Visitor visits landing page
     Given I visit the "ThaiTanic" page
     Then I should see 'Lunch'
-    And I should see 'Dinner'
     And I should see 'Pizza'
+    And I should see 'Margherita Price: 15'
+    And I should see 'Hawaii Price: 14'
+    # And show me the page

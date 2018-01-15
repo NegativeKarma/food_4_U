@@ -24,3 +24,11 @@ Given("the following dish categories exist for {string}") do |menu, table|
     FactoryBot.create(:dish_category, hash)
   end
 end
+
+Given("the following dishes exist for {string}") do |dish_category, table|
+  dish_category = DishCategory.find_by(name: dish_category)
+  table.hashes.each do |hash|
+    hash[:dish_category] = dish_category
+    FactoryBot.create(:dish, hash)
+  end
+end
