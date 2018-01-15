@@ -4,7 +4,8 @@
   <% menu.dish_categories.each do |category| %>
     <h4><%= category.name %></h4>
     <% category.dishes.each do |dish| %>
-      <span><%= dish.name %> Price: <%= dish.price %></span><br />
+      <span><%= dish.name %> Price: <%= dish.price %></span>
+      <button type='button'>Order</button><br />
     <% end %>
   <% end %>
 </div>
