@@ -16,3 +16,11 @@ Given("the following menus exist for {string}") do |restaurant, table|
     FactoryBot.create(:menu, hash)
   end
 end
+
+Given("the following dish categories exist for {string}") do |menu, table|
+  menu = Menu.find_by(name: menu)
+  table.hashes.each do |hash|
+    hash[:menu] = menu
+    FactoryBot.create(:dish_category, hash)
+  end
+end
