@@ -27,4 +27,4 @@ Feature: Dishes displayed for visitors
     And I should see 'Pizza'
     And I should see 'Margherita Price: 15'
     And I should see 'Hawaii Price: 14'
-    # And show me the page
+    And show me the page

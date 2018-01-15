@@ -12,6 +12,7 @@ RSpec.describe DishCategory, type: :model do
 
   describe 'Relations' do
     it { is_expected.to belong_to :menu }
+    it { is_expected.to have_many :dishes }
   end
 
   describe FactoryBot do
