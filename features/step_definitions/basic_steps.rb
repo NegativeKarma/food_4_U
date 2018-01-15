@@ -22,6 +22,10 @@ Then("I should be redirected to landing page") do
   expect(current_path).to eq root_path
 end
 
+Then("show me the page") do
+  save_and_open_page
+end
+
 def page_path_from(page_name)
   case page_name.downcase
     when 'thaitanic' then restaurant_path(Restaurant.find_by(name: page_name))

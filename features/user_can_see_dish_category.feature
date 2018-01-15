@@ -22,3 +22,4 @@ Feature: Dish categories displayed for visitors
     Then I should see 'Lunch'
     And I should see 'Dinner'
     And I should see 'Pizza'
+    And show me the page
