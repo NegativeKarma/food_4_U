@@ -20,3 +20,12 @@ menus.each do |menu|
     puts "Create dish category with name: #{c.name}"
   end
 end
+
+seed_file = Rails.root.join('db', 'seeds', 'dishes.yml')
+config = YAML::load_file(seed_file)
+categories = DishCategory.all.select {|category| category.name == 'Pizza' }
+categories.each do |category|
+  category.dishes.create!(config) do |c|
+    puts "Create dish with name: #{c.name}"
+  end
+end
