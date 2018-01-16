@@ -12,20 +12,20 @@ Restaurant.all.each do |restaurant|
   end
 end
 
-seed_file = Rails.root.join('db', 'seeds', 'dish_categories.yml')
+seed_file = Rails.root.join('db', 'seeds', 'product_categories.yml')
 config = YAML::load_file(seed_file)
 menus = Menu.all.select {|menu| menu.name == 'Lunch'}
 menus.each do |menu|
-  menu.dish_categories.create!(config) do |c|
-    puts "Create dish category with name: #{c.name}"
+  menu.product_categories.create!(config) do |c|
+    puts "Create product category with name: #{c.name}"
   end
 end
 
-seed_file = Rails.root.join('db', 'seeds', 'dishes.yml')
+seed_file = Rails.root.join('db', 'seeds', 'products.yml')
 config = YAML::load_file(seed_file)
-categories = DishCategory.all.select {|category| category.name == 'Pizza' }
+categories = ProductCategory.all.select {|category| category.name == 'Pizza' }
 categories.each do |category|
-  category.dishes.create!(config) do |c|
-    puts "Create dish with name: #{c.name}"
+  category.products.create!(config) do |c|
+    puts "Create product with name: #{c.name}"
   end
 end
