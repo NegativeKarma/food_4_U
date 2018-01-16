@@ -17,18 +17,18 @@ Given("the following menus exist for {string}") do |restaurant, table|
   end
 end
 
-Given("the following dish categories exist for {string}") do |menu, table|
+Given("the following product categories exist for {string}") do |menu, table|
   menu = Menu.find_by(name: menu)
   table.hashes.each do |hash|
     hash[:menu] = menu
-    FactoryBot.create(:dish_category, hash)
+    FactoryBot.create(:product_category, hash)
   end
 end
 
-Given("the following dishes exist for {string}") do |dish_category, table|
-  dish_category = DishCategory.find_by(name: dish_category)
+Given("the following products exist for {string}") do |product_category, table|
+  product_category = ProductCategory.find_by(name: product_category)
   table.hashes.each do |hash|
-    hash[:dish_category] = dish_category
-    FactoryBot.create(:dish, hash)
+    hash[:product_category] = product_category
+    FactoryBot.create(:product, hash)
   end
 end

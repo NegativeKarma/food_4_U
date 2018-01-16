@@ -1,7 +1,7 @@
-Feature: Dishes displayed for visitors
+Feature: Products displayed for visitors
   As a visitor
-  In order to help me decide what food to order
-  I would like to see dishes displayed
+  In order to help me decide what product to order
+  I would like to see products displayed
 
   Background:
     Given the following restaurants exists
@@ -12,11 +12,11 @@ Feature: Dishes displayed for visitors
       | name    |
       | Lunch   |
       | Dinner  |
-    And the following dish categories exist for "Lunch"
+    And the following product categories exist for "Lunch"
       | name    |
       | Pizza   |
       | Noodles |
-    And the following dishes exist for "Pizza"
+    And the following products exist for "Pizza"
       | name       | price  |
       | Margherita | 15     |
       | Hawaii     | 14     |
