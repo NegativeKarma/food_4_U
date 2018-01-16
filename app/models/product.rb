@@ -1,5 +1,5 @@
-class Dish < ApplicationRecord
-  belongs_to :dish_category
+class Product < ApplicationRecord
+  belongs_to :product_category
   validates :name, presence: true
   validates :price, presence: true
 end

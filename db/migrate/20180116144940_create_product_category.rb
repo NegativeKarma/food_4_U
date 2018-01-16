@@ -1,6 +1,6 @@
-class CreateDishCategories < ActiveRecord::Migration[5.1]
+class CreateProductCategory < ActiveRecord::Migration[5.1]
   def change
-    create_table :dish_categories do |t|
+    create_table :product_categories do |t|
       t.string :name
       t.belongs_to :menu, foreign_key: true
 

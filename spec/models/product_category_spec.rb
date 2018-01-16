@@ -1,24 +1,24 @@
 require 'rails_helper'
 
-RSpec.describe Dish, type: :model do
-  describe 'DB Table' do
+RSpec.describe ProductCategory, type: :model do
+  describe 'DB table' do
     it { is_expected.to have_db_column :id }
     it { is_expected.to have_db_column :name }
-    it { is_expected.to have_db_column :price }
   end
 
   describe 'Validations' do
     it { is_expected.to validate_presence_of :name }
-    it { is_expected.to validate_presence_of :price }
   end
 
   describe 'Relations' do
-    it { is_expected.to belong_to :dish_category }
+    it { is_expected.to belong_to :menu }
+    it { is_expected.to have_many :products }
   end
 
   describe FactoryBot do
     it 'should be valid' do
-      expect(FactoryBot.create(:dish)).to be_valid
+      expect(FactoryBot.create(:product_category)).to be_valid
     end
   end
+
 end

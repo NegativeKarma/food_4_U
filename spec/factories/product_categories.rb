@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :dish_category do
+  factory :product_category do
     association :menu
     name "MyString"
   end
